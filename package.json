@@ -10,17 +10,8 @@
     "type": "git",
     "url": "https://github.com/hello-jason/portfolio.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hello-jason/portfolio/issues"
-  },
-  "homepage": "https://github.com/hello-jason/portfolio",
   "devDependencies": {
     "gulp": "",
-    "gulp-uncss": "",
-    "gulp-csso": "",
-    "gulp-gzip": "",
-    "layzr.js": ""
+    "gulp-premailer": ""
   }
 }

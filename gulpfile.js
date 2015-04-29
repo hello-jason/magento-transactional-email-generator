@@ -1,18 +1,11 @@
-var gulp   = require('gulp'); // core gulp
-var uncss  = require('gulp-uncss'); // removes unused css
-var csso   = require('gulp-csso'); // minify css
-var gzip   = require('gulp-gzip'); // gzip compression
+var gulp        = require('gulp'); // core gulp
+var premailer   = require('gulp-premailer'); // inline CSS for HTML emails
 
-gulp.task('uncss', function() {
-  return gulp.src('build/assets/css/**/*.css')
-    .pipe(uncss({
-        html: ['build/**/*.html']
-    }))
-    .pipe(csso())
-    .pipe(gulp.dest('./build/assets/css'))
-    .pipe(gzip())
-    .pipe(gulp.dest('./build/assets/css'));
+gulp.task('premailer', function () {
+  return gulp.src('./build/**/*.html')
+      .pipe(premailer())
+      .pipe(gulp.dest('./premailer'));
 });
 
-// Scan site, remove unused css, minifiy css, gzip css
-gulp.task('buildcss', ['uncss']);
+// Scan build directory for .html files and inline their CSS
+gulp.task('default', ['premailer']);
