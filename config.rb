@@ -19,10 +19,6 @@ set :site_url_development, ENV['site_url_development']
 set :css_dir,              "assets/css"
 set :images_dir,           "assets/img"
 
-# Sitemap URLs (use trailing slashes). Create additional variables here
-# for referencing your pages.
-set :url_home,                       "/"
-
 # ========================================================================
 # Magento template variables
 # ========================================================================
@@ -31,6 +27,8 @@ set :magento_payment_html, "{{var payment_html}}"
 set :magento_order_id, "{{var order.increment_id}}"
 set :magento_created_at_long, "{{var order.getCreatedAtFormated('long')}}"
 set :magento_support_email, "{{config path='trans_email/ident_support/email'}}"
+set :magento_store_name, "{{var store.getFrontendName()}}"
+set :magento_account_url, "{{store url='customer/account/'}}"
 
 # Slim template engine
 require "slim"
@@ -46,7 +44,7 @@ activate :autoprefixer do |config|
 end
 
 # Pretty URLs
-activate :directory_indexes
+#activate :directory_indexes
 
 # ========================================================================
 # Helpers
@@ -83,22 +81,6 @@ configure :build do
 
   # Optimization
   set :sass, line_comments: false, style: :compressed
-  activate :minify_css
-  # activate :minify_html
-
-  # Cache buster
-  # activate :asset_hash, :exts => ['.css', '.png', '.jpg', '.gif']
-
-  # Compress and optimise images during build
-  # Documentation: https://github.com/plasticine/middleman-imageoptim
-  activate :imageoptim do |options|
-    # Use a build manifest to prevent re-compressing images between builds
-    options.manifest = false
-    # Image extensions to attempt to compress
-    options.image_extensions = %w(.png .jpg .gif .svg)
-    # Cause image_optim to be in shouty-mode
-    options.verbose = false
-  end
 
 end
 
