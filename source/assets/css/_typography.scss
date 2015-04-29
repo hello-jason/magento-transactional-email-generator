@@ -1,0 +1,16 @@
+h1 {
+  color: $brand-primary;
+  font-size: 26px;
+  font-weight: bold;
+}
+h2 {
+  color: $brand-accent;
+  font-size: 22px;
+  font-weight: bold;
+  small {
+    font-weight: normal;
+  }
+}
+h3 {
+  font-size: $font-size;
+}
