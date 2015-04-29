@@ -65,10 +65,16 @@ bundle exec middleman
 
 ## Building
 
-Run the build command in the project's directory:
+Build the project, then run premailer:
 
 ```bash
 bundle exec middleman build
+gulp
 ```
 
-Copy the contents of each template in `build/email-templates` to their respective WYSIWYG box in Magento > System > Transactional Emails
+Copy the contents of each template in `premailer/email-templates` to their respective WYSIWYG box in Magento > System > Transactional Emails
+
+# TODO
+
+* Rake task to build, premailer
+* Finish rest of email templates
