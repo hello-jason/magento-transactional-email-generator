@@ -32,6 +32,7 @@ set :magento_created_at_long, "{{var order.getCreatedAtFormated('long')}}"
 # Links
 set :magento_payment_html, "{{var payment_html}}"
 set :magento_account_url, "{{store url='customer/account/'}}"
+set :magento_password_reset_url, "{{store url='customer/account/resetpassword/' _query_id=$customer.id _query_token=$customer.rp_token}}"
 #Store
 set :magento_store_name, "{{var store.getFrontendName()}}"
 set :magento_support_email, "{{config path='trans_email/ident_support/email'}}"
