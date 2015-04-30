@@ -1,34 +1,14 @@
-doctype html
-/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
-/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
-/[if IE 8] <html class="no-js lt-ie9">
-/ [if gt IE 8]><!
-html
-  / <![endif]
+doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
+html xmlns="http://www.w3.org/1999/xhtml"
   head
     meta charset="UTF-8"
-    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
-    meta content="width=device-width" name="viewport"
+    meta http-equiv="Content-Type" content="text/html"
+    meta name="viewport" content="initial-scale=1.0, width=device-width"
 
-    // Check if page is overriding title in frontmatter, otherwise use default set in config.rb
-    - if current_page.data.title
-      title #{site_title} / #{current_page.data.title}
-    - else
-      title #{site_title}
-
-    // Check if page is overriding meta description in frontmatter, otherwise use default set in config.rb
-    - if current_page.data.meta_description
-      meta content="#{current_page.data.meta_description}" name="description"
-    - else
-      meta content="#{site_description}" name="description"
     // Stylesheet
     = stylesheet_link_tag "main"
     link href="#{site_url+current_page.url}" rel="canonical"
 
-  // Check if page is passing class for body
-  - if current_page.data.body_class
-    body class="#{page_classes} #{current_page.data.body_class}"
-  - else
     body class="#{page_classes}"
       table#backgroundTable cellpadding="0" cellspacing="0" border="0"
         tr
@@ -36,13 +16,15 @@ html
             table#contentTable cellpadding="0" cellspacing="0" border="0"
               tr
                 td.header
-                  img src="https://shopsweetsandtreats.com/media/email-logo.jpg" alt="Sweets &amp; Treats"
-              tr
-                td.mainContent
-                  = yield
-              tr
-                td.content.signoff
-                  h2 Thank you!
+                  a href="#{site_url}"
+                    img src="https://shopsweetsandtreats.com/media/email-logo.jpg" alt="Sweets &amp; Treats"
+        tr
+          table cellpadding="0" cellspacing="0" border="0"
+            td.mainContent
+              = yield
+        tr
+          td.content.signoff
+            h2 Thank you!
       table#coloredLines cellpadding="0" cellspacing="0" border="0"
         tr
           td.one

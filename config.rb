@@ -28,15 +28,21 @@ set :images_dir,           "assets/img"
 # Customer
 set :magento_customer_name, "{{htmlescape var=$order.getCustomerName()}}"
 set :magento_billing_address, "{{var order.getBillingAddress().format('html')}}"
+set :magento_payment_html, "{{var payment_html}}"
+# Shipping
+set :magento_shipping_id, "{{var shipment.increment_id}}"
+set :magento_shipping_address, "{{var order.shipping_address.format('html')}}"
+set :magento_shipping_method, "{{var order.shipping_description}}"
 # Order
 set :magento_order_id, "{{var order.increment_id}}"
 set :magento_order_status, "{{var order.getStatusLabel()}}"
 set :magento_created_at_long, "{{var order.getCreatedAtFormated('long')}}"
 set :magento_credit_memo_id, "{{var creditmemo.increment_id}}"
+# Global
+set :magento_admin_comment, "{{var comment}}"
 # Invoices
 set :magento_invoice_id, "{{var invoice.increment_id}}"
 # Links
-set :magento_payment_html, "{{var payment_html}}"
 set :magento_account_url, "{{store url='customer/account/'}}"
 set :magento_password_reset_url, "{{store url='customer/account/resetpassword/' _query_id=$customer.id _query_token=$customer.rp_token}}"
 # Store
