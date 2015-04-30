@@ -7,6 +7,9 @@
 # then update settings there.
 require "./source/environment_variables.rb"
 
+# Slim template engine
+require "slim"
+
 # ========================================================================
 # Site settings
 # ========================================================================
@@ -29,16 +32,18 @@ set :magento_billing_address, "{{var order.getBillingAddress().format('html')}}"
 set :magento_order_id, "{{var order.increment_id}}"
 set :magento_order_status, "{{var order.getStatusLabel()}}"
 set :magento_created_at_long, "{{var order.getCreatedAtFormated('long')}}"
+set :magento_credit_memo_id, "{{var creditmemo.increment_id}}"
 # Links
 set :magento_payment_html, "{{var payment_html}}"
 set :magento_account_url, "{{store url='customer/account/'}}"
 set :magento_password_reset_url, "{{store url='customer/account/resetpassword/' _query_id=$customer.id _query_token=$customer.rp_token}}"
-#Store
+# Store
 set :magento_store_name, "{{var store.getFrontendName()}}"
 set :magento_support_email, "{{config path='trans_email/ident_support/email'}}"
 
-# Slim template engine
-require "slim"
+# ========================================================================
+# Other settings
+# ========================================================================
 
 # Use relative URLs
 activate :relative_assets
