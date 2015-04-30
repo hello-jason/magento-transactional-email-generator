@@ -33,6 +33,8 @@ set :magento_order_id, "{{var order.increment_id}}"
 set :magento_order_status, "{{var order.getStatusLabel()}}"
 set :magento_created_at_long, "{{var order.getCreatedAtFormated('long')}}"
 set :magento_credit_memo_id, "{{var creditmemo.increment_id}}"
+# Invoices
+set :magento_invoice_id, "{{var invoice.increment_id}}"
 # Links
 set :magento_payment_html, "{{var payment_html}}"
 set :magento_account_url, "{{store url='customer/account/'}}"
