@@ -1,0 +1,34 @@
+tr
+  td
+    h1 Dear #{magento_customer_name},
+    p Thank you for your Gift Voucher(s) order from. If you have any questions about your order, please contact us at <a href="mailto:#{magento_support_email}">#{magento_support_email}</a>.
+
+    h4 Your voucher information is below. Thank you again for your business!
+
+tr
+  td
+    table.info cellpadding="0" cellspacing="0" border="0"
+      thead
+        tr
+          th Voucher Information:
+      tbody
+        tr
+          td
+            ul
+              li To: #{magento_friend_name}
+              li From: #{magento_sender_name}
+              li Expiration: None
+              li Message: #{magento_message}
+
+          td width="1%" style="padding 7px 9px 9px 9px;"
+                small style="font-size: 11px; color: #919191;" Use before expiration date.  Not redeemable for cash. This voucher can only be redeemed at <a href="#{magento_store_url}">#{magento_store_name}</a>
+        tr
+          td colspan="2" style="padding:12px 9px; border-bottom: 2px solid #ec1e88; border-top: 2px solid #ec1e88; border-left: 2px solid #ec1e88; border-right: 2px solid #ec1e88; text-align: center;"
+              h1 style="text-align: center; font-size: 18px; color: #919191; margin: 0.75em 0;" Redemption Code: #{magento_redemption_code}
+
+
+
+
+
+
+
