@@ -1,0 +1,14 @@
+tr
+  td
+    h1 Hello!
+    p Thank you for your order from #{magento_store_name}!
+
+    p If you have any questions about your order, please contact us at <a href="mailto:#{magento_support_email}">#{magento_support_email}</a>.
+
+tr
+  td
+    h2 Your Invoice ##{magento_invoice_id} for Order ##{magento_order_id}
+
+= partial "partials/billing-payment"
+
+#{magento_admin_comment}

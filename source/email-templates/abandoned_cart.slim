@@ -4,11 +4,8 @@ tr
     p Don’t party without us! You left some pretty party goodies behind at Sweets & Treats Boutique. You can finalize your order by accessing your cart <a href="#{magento_cart_url}">here</a>
 
     p If you have any questions, please feel free to contact us at <a href="mailto:#{magento_support_email}">#{magento_support_email}</a>.
-tr
-  td
-    table.info cellpadding="0" cellspacing="0" border="0"
-      thead
-        tr
-          td #{magento_abandoned_cart}
+
+    = partial "partials/abandoned-cart"
+
     br
     p You can unsubscribe from this email by clicking <a href="#{magento_subscription_url}">here</a>

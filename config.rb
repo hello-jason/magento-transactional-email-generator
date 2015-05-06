@@ -7,6 +7,9 @@
 # then update settings there.
 require "./source/environment_variables.rb"
 
+# Slim template engine
+require "slim"
+
 # ========================================================================
 # Site settings
 # ========================================================================
@@ -22,35 +25,49 @@ set :images_dir,           "assets/img"
 # ========================================================================
 # Magento template variables
 # ========================================================================
+# Customer
+set :magento_customer_name, "{{htmlescape var=$order.getCustomerName()}}"
 set :magento_billing_address, "{{var order.getBillingAddress().format('html')}}"
 set :magento_payment_html, "{{var payment_html}}"
-set :magento_order_id, "{{var order.increment_id}}"
-set :magento_shipping_description, "{{var order.shipping_description}}"
-set :magento_shipment_id, "{{var shipment.increment_id}}"
-set :magento_shipping_address, "{{var order.shipping_address.format('html')}}"
-set :magento_created_at_long, "{{var order.getCreatedAtFormated('long')}}"
-set :magento_support_email, "{{config path='trans_email/ident_support/email'}}"
-set :magento_supprt_phone, " {{config path='general/store_information/phone'}}"
-set :magento_store_name, "{{var store.getFrontendName()}}"
-set :magento_account_url, "{{store url='customer/account/'}}"
-set :magento_account_confirm_url, "{{store url='customer/account/confirm/'}}"
-set :magento_subscription_url, "{{var subscriber.getUnsubscriptionLink()}}"
-set :magento_cart_url, "{{store url='checkout/cart'}}"
-set :magento_customer_name, "{{var order.getCustomerName}}"
 set :magento_customer_pass, "{{var customer.password}}"
 set :magento_customer_email, "{{var customer.email}}"
-set :magento_abandoned_cart, "{{block type='ebizmarts_abandonedcart/email_order_items' area='frontend' template='ebizmarts_abandonedcart/email/order/items.phtml' quote=$quote}}"
-set :magento_store_url, "{{store url=''}}"
+# Shipping
+set :magento_shipping_id, "{{var shipment.increment_id}}"
+set :magento_shipping_address, "{{var order.shipping_address.format('html')}}"
+set :magento_shipping_method, "{{var order.shipping_description}}"
+set :magento_shipping_description, "{{var order.shipping_description}}"
+# Order
+set :magento_order_id, "{{var order.increment_id}}"
 set :magento_order_status, "{{var order.getStatusLabel()}}"
+set :magento_store_url, "{{store url=''}}"
 # send to friend variables
 set :magento_friend_name, "{{var name}}"
 set :magento_sender_name, "{{var sender_name}}"
 set :magento_message, "{{var message}}"
 set :magento_redemption_code, "{{var code}}"
 set :magento_wishlist_url, "{{var viewOnSiteLink}}"
+set :magento_created_at_long, "{{var order.getCreatedAtFormated('long')}}"
+set :magento_credit_memo_id, "{{var creditmemo.increment_id}}"
+# Global
+set :magento_admin_comment, "{{var comment}}"
+set :magento_abandoned_cart, "{{block type='ebizmarts_abandonedcart/email_order_items' area='frontend' template='ebizmarts_abandonedcart/email/order/items.phtml' quote=$quote}}"
+# Invoices
+set :magento_invoice_id, "{{var invoice.increment_id}}"
+# Links
+set :magento_account_url, "{{store url='customer/account/'}}"
+set :magento_password_reset_url, "{{store url='customer/account/resetpassword/' _query_id=$customer.id _query_token=$customer.rp_token}}"
+set :magento_account_confirm_url, "{{store url='customer/account/confirm/'}}"
+set :magento_subscription_url, "{{var subscriber.getUnsubscriptionLink()}}"
+set :magento_cart_url, "{{store url='checkout/cart'}}"
+# Store
+set :magento_store_name, "{{var store.getFrontendName()}}"
+set :magento_support_phone, " {{config path='general/store_information/phone'}}"
+set :magento_support_email, "{{config path='trans_email/ident_support/email'}}"
 
-# Slim template engine
-require "slim"
+
+# ========================================================================
+# Other settings
+# ========================================================================
 
 # Use relative URLs
 activate :relative_assets

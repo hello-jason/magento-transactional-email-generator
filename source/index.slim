@@ -3,34 +3,7 @@ tr
     h1 Dear #{magento_customer_name},
     p Thank you for your order from . You can check the status of your order by logging into your account. If you have any questions about your order, please contact us at <a href="mailto:#{magento_support_email}">#{magento_support_email}</a> or call us at Monday - Friday, 8am - 5pm PST.
     p Your shipping confirmation is below. Thank you again for your business.
-    h2 Your Shipment # #{magento_shipment_id} for Order # #{magento_order_id}
+    h2 Your Shipment # #{magento_shipping_id} for Order # #{magento_order_id}
 
-    tr
-      td
-        table.info cellspacing="0" cellpadding="0" border="0" width="650"
-          thead
-            tr
-              th align="center" width="325" bgcolor="#ec1e88" style="font-size:13px; padding: 5px 9px 6px 9px; line-height: 1em;"Billing Information
-              th width="10"
-              th align="center" width="325" bgcolor="#ec1e88" style="font-size:13px; padding: 5px 9px 6px 9px; line-height: 1em;"Payment Method
-
-          tbody
-            tr
-              td valign="top" align="center" style="font-size:12px; padding:7px 9px 9px 9px;" #{magento_billing_address}
-              td &nbsp;
-              td valign="top" align="center" style="font-size:12px; padding:7px 9px 9px 9px;" #{magento_payment_html}
-    tr
-      td
-        table.info cellspacing="0" cellpadding="0" border="0" width="100%"
-          thead
-            tr
-              th align="center" width="325" bgcolor="#ec1e88" style="font-size:13px; padding: 5px 9px 6px 9px; line-height: 1em;"Shipping Information
-              th width="10"
-              th align="center" width="325" bgcolor="#ec1e88" style="font-size:13px; padding: 5px 9px 6px 9px; line-height: 1em;"Shipping Method Method
-
-          tbody
-            tr
-              td valign="top" align="center" style="font-size:12px; padding:7px 9px 9px 9px;" #{magento_shipping_address}
-              td &nbsp;
-              td valign="top" align="center" style="font-size:12px; padding:7px 9px 9px 9px;" #{magento_shipping_description}
-
+= partial "partials/billing-payment"
+= partial "partials/shipping"
