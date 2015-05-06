@@ -69,3 +69,30 @@ a {
   }
   }
 }
+
+#pinkBox {
+    border:1px solid #ec1e88;
+    font-size:12px;
+    line-height: 16px;
+    margin:0 0 16px 0;
+    padding: 13px 18px;
+    background: #FFEFFF;
+
+}
+
+#expirationNote {
+  td {
+    padding: 7px 9px 9px 9px;
+  }
+  small {
+    font-size: 11px; color: #919191;
+  }
+}
+
+#redemptionCode {
+  text-align: center;
+  font-size: 18px;
+  color: #919191;
+  margin: 0.75em 0;
+}
+

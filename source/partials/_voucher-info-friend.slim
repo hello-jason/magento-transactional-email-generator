@@ -13,8 +13,8 @@ tr
               li Expiration: None
               li Message: #{magento_message}
 
-          td width="1%" style="padding 7px 9px 9px 9px;"
-                small style="font-size: 11px; color: #919191;" Use before expiration date.  Not redeemable for cash. This voucher can only be redeemed at <a href="#{magento_store_url}">#{magento_store_name}</a>
+          td#expirationNote width="1%"
+                small#expirationNote Use before expiration date.  Not redeemable for cash. This voucher can only be redeemed at <a href="#{magento_store_url}">#{magento_store_name}</a>
         tr
-          td colspan="2" style="padding:12px 9px; border-bottom: 2px solid #ec1e88; border-top: 2px solid #ec1e88; border-left: 2px solid #ec1e88; border-right: 2px solid #ec1e88; text-align: center;"
-              h1 style="text-align: center; font-size: 18px; color: #919191; margin: 0.75em 0;" Redemption Code: #{magento_redemption_code}
+          td#pinkBox colspan="2"
+              h1#redemptionCode Redemption Code: #{magento_redemption_code}
