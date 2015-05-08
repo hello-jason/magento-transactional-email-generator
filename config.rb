@@ -40,6 +40,7 @@ set :magento_shipping_description, "{{var order.shipping_description}}"
 set :magento_order_id, "{{var order.increment_id}}"
 set :magento_order_status, "{{var order.getStatusLabel()}}"
 set :magento_store_url, "{{store url=''}}"
+set :magento_order_comment, "{{var comment}}"
 # send to friend variables
 set :magento_friend_name, "{{var name}}"
 set :magento_sender_name, "{{var sender_name}}"
@@ -48,6 +49,7 @@ set :magento_redemption_code, "{{var code}}"
 set :magento_wishlist_url, "{{var viewOnSiteLink}}"
 set :magento_created_at_long, "{{var order.getCreatedAtFormated('long')}}"
 set :magento_credit_memo_id, "{{var creditmemo.increment_id}}"
+set :magento_voucher_balance, "{{var balance}}"
 # Global
 set :magento_admin_comment, "{{var comment}}"
 set :magento_abandoned_cart, "{{block type='ebizmarts_abandonedcart/email_order_items' area='frontend' template='ebizmarts_abandonedcart/email/order/items.phtml' quote=$quote}}"
@@ -64,6 +66,9 @@ set :magento_store_name, "{{var store.getFrontendName()}}"
 set :magento_support_phone, " {{config path='general/store_information/phone'}}"
 set :magento_support_email, "{{config path='trans_email/ident_support/email'}}"
 
+set :magento_shipment_handle, "{{layout handle='sales_email_order_shipment_items' shipment=$shipment order=$order}}"
+
+set :magento_core_template_track, "{{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}"
 
 # ========================================================================
 # Other settings

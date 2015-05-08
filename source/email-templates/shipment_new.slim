@@ -12,7 +12,6 @@ tr
 = partial "partials/billing-payment"
 = partial "partials/shipping"
 
-{{layout handle="sales_email_order_shipment_items" shipment=$shipment order=$order}}
-{{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}
-
-#{magento_order_comment}
+h1 #{magento_shipment_handle}
+h1 #{magento_core_template_track}
+h1 #{magento_order_comment}
