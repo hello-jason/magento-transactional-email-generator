@@ -26,7 +26,7 @@ set :images_dir,           "assets/img"
 # Magento template variables
 # ========================================================================
 # Customer
-set :magento_customer_name, "{{htmlescape var=$order.getCustomerName()}}"
+set :magento_customer_name, "{{htmlescape var=$customer.name}}"
 set :magento_billing_address, "{{var order.getBillingAddress().format('html')}}"
 set :magento_payment_html, "{{var payment_html}}"
 set :magento_customer_pass, "{{var customer.password}}"
