@@ -70,6 +70,8 @@ set :magento_shipment_handle, "{{layout handle='sales_email_order_shipment_items
 
 set :magento_core_template_track, "{{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}"
 
+set :magento_order_handle, "{{layout handle='sales_email_order_items' order=$order}}"
+
 # ========================================================================
 # Other settings
 # ========================================================================

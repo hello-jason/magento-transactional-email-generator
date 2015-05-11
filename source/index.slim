@@ -1,21 +1,19 @@
 tr
   td
-    table.info cellpadding="0" cellspacing="0" border="0" width="100%"
-      thead
-        tr
-          th Voucher Information:
-      tbody
-        tr
-          td width="50%" valign="top"
-            ul
-              li To: #{magento_friend_name}
-              li From: #{magento_sender_name}
-              li Expiration: None
-              li Message: #{magento_message}
+    h1 Hello!
 
-          td#expirationNote width="50%"
-            h1#expirationNote #{magento_voucher_balance}
-            small#expirationNote Use before expiration date.  Not redeemable for cash. This voucher can only be redeemed at <a href="#{magento_store_url}">#{magento_store_name}</a>
-        tr
-          td#pinkBox colspan="2"
-              h1#redemptionCode Redemption Code: #{magento_redemption_code}
+    p Thank you for your order from #{magento_store_name}!
+
+    p Once your package ships, you can track your order using our <a href="#{site_url}/sales/order/guest/">Order Status form</a> if you did not create an account. If you have any questions about your order, please contact us at <a href="mailto:#{magento_support_email}">#{magento_support_email}</a>.
+
+    p Your order confirmation is below. Thank you again for your business.
+
+tr
+  td
+    h2 Your Order ##{magento_order_id}<br><small>(placed on #{magento_created_at_long})</small>
+
+= partial "partials/billing-payment"
+
+tr
+  td
+    p #{magento_order_handle}
