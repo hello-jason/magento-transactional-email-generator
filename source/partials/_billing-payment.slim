@@ -4,9 +4,13 @@ tr
       thead
         tr
           th Billing Information
-          th Payment Information
+          th style="background: white !important"
+          th Shipping Information
       tbody
         tr
-          td #{magento_billing_address}
-          td #{magento_payment_html}
-          
+          td width="48%"  #{magento_billing_address}
+          td width="4%" style="background: white !important"
+          td width="48%"  #{magento_shipping_address}
+        tr
+          td style="background: white !important"
+

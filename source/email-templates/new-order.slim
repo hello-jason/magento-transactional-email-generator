@@ -4,15 +4,14 @@ tr
 
     p Thank you for your order from #{magento_store_name}!
 
-    p Once your package ships, we will send an email with a link to track your order. You can check the status of your order by <a href="#{magento_account_url}">logging into your account</a>. If you have any questions about your order, please contact us at <a href="mailto:#{magento_support_email}">#{magento_support_email}</a>.
-
-    p Your order confirmation is below. Thank you again for your business.
+    p Once your package ships, we will send an email with a link to track your order. You can check the status of your order by <a href="#{magento_account_url}">logging into your account</a>. If you have any questions about your order, please <a href="mailto:#{magento_support_email}">contact us</a>. Your order confirmation is below.
 
 tr
   td
-    h2 Your Order ##{magento_order_id}<br><small>(placed on #{magento_created_at_long})</small>
+    h2 Your Order ##{magento_order_id}
 
 = partial "partials/billing-payment"
+= partial "partials/shipping"
 
 tr
   td

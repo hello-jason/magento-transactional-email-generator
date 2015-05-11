@@ -40,10 +40,9 @@ a {
     td, th {
       background: $lighter-gray;
       padding: ($padding / 3) $padding;
+      font-size: 12px;
     }
-    th {
-      @extend h3;
-    }
+
   }
 }
 
