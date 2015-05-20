@@ -10,3 +10,5 @@ gem "middleman-autoprefixer"
 # Development
 gem "middleman-livereload"
 gem "oj"
+gem "premailer"
+gem "nokogiri"

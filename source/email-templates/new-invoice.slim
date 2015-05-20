@@ -1,0 +1,15 @@
+tr
+  td
+    h1 Hello!
+
+    p Thank you for your order from #{magento_store_name}!
+
+    p You can check the status of your order by <a href="#{magento_account_url}">logging into your account</a>. If you have any questions about your order, please <a href="mailto:#{magento_support_email}">contact us</a>.
+
+tr
+  td
+    h2 Your invoice for Order ##{magento_order_id}
+
+= partial "partials/billing-payment"
+
+#{magento_admin_comment}

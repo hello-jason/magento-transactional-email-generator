@@ -1,4 +1,4 @@
-# Hello Jason Portfolio
+# Magento Transactional Emails
 
 Written with [Ruby](https://www.ruby-lang.org/en/)+[Middleman](http://middlemanapp.com) and based on the [middleman-bss starter theme](https://github.com/hello-jason/middleman-bss)
 
