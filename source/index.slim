@@ -1,18 +1,9 @@
 tr
   td
-    h1 Hello!
+    h1 Dear #{magento_sales_name},
 
-    p Thank you for your order from #{magento_store_name}!
+    p Your order # #{magento_order_id} has been #{magento_order_status} and will ship within 24 hours
 
-    p Once your package ships, you can track your order using our <a href="#{site_url}/sales/order/guest/">Order Status Form</a> if you did not create an account. If you have any questions about your order, please <a href="mailto:#{magento_support_email}">contact us</a>. Your order confirmation is below.
+    p You can check the status of your order by <a href="#{magento_account_url}">logging into your account</a>
 
-tr
-  td
-    h2 Your Order ##{magento_order_id}
-
-= partial "partials/billing-payment"
-= partial "partials/shipping"
-
-tr
-  td
-    p #{magento_order_handle}
+    p If you have any questions, please feel free to <a href="mailto:#{magento_support_email}">contact us</a>

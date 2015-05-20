@@ -36,11 +36,15 @@ set :magento_shipping_id, "{{var shipment.increment_id}}"
 set :magento_shipping_address, "{{var order.shipping_address.format('html')}}"
 set :magento_shipping_method, "{{var order.shipping_description}}"
 set :magento_shipping_description, "{{var order.shipping_description}}"
+set :magento_sales_name, "{{htmlescape var=$order.getCustomerName()}}"
 # Order
 set :magento_order_id, "{{var order.increment_id}}"
 set :magento_order_status, "{{var order.getStatusLabel()}}"
 set :magento_store_url, "{{store url=''}}"
 set :magento_order_comment, "{{var comment}}"
+set :magento_if_email_note, "{{if order.getEmailCustomerNote()}}"
+set :magento_email_note, "{{var order.getEmailCustomerNote()}}"
+set :magento_end_if, "{{/if}}"
 # send to friend variables
 set :magento_friend_name, "{{var name}}"
 set :magento_sender_name, "{{var sender_name}}"
@@ -65,7 +69,8 @@ set :magento_cart_url, "{{store url='checkout/cart'}}"
 set :magento_store_name, "{{var store.getFrontendName()}}"
 set :magento_support_phone, " {{config path='general/store_information/phone'}}"
 set :magento_support_email, "{{config path='trans_email/ident_support/email'}}"
-
+# Billing
+set :magento_billing_name, "{{htmlescape var=$billing.getName()}}"
 set :magento_shipment_handle, "{{layout handle='sales_email_order_shipment_items' shipment=$shipment order=$order}}"
 
 set :magento_core_template_track, "{{block type='core/template' area='frontend' template='email/order/shipment/track.phtml' shipment=$shipment order=$order}}"
