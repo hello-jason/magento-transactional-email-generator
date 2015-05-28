@@ -4,6 +4,8 @@ tr
 
     p Your order # #{magento_order_id} has been #{magento_order_status} and will ship within 24 hours
 
+    p#greyBoxPinkBorder #{magento_if_order_comment} #{magento_order_comment}
+
     p You can check the status of your order by <a href="#{magento_account_url}">logging into your account</a>
 
     p If you have any questions, please feel free to <a href="mailto:#{magento_support_email}">contact us</a>
