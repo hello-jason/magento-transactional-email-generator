@@ -78,6 +78,14 @@ set :magento_core_template_track, "{{block type='core/template' area='frontend' 
 
 set :magento_order_handle, "{{layout handle='sales_email_order_items' order=$order}}"
 
+#gift cards
+set :magento_gift_card_value, "{{var data.amount}}"
+set :magento_gift_card_from,  "{{depend data.email-from}} <strong>From:</strong> {{var data.email-from}}{{/depend}}"
+set :magento_gift_card_to, "{{depend data.email-to}}<strong>To:</strong> {{var data.email-to}}<br />{{/depend}}"
+set :magento_gift_card_message, "{{depend data.email-message}}<strong>Message:</strong> {{var data.email-message}}<br />{{/depend}}"
+set :magento_gift_card_code, "{{var data.code}}"
+set :magento_gift_card_link, "{{var data.link}}"
+
 # ========================================================================
 # Other settings
 # ========================================================================

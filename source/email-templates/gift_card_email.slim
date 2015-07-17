@@ -1,10 +1,12 @@
 tr
   td
     h1 Hello!
-    p To print your #{magento_store_name} Gift Card click on the following link: <a href="#{magento_gift_card_link}"> #{magento_gift_card_link}.</a>
+    p You have received a #{magento_gift_card_value} Gift Card #{magento_gift_card_from} to <a href="#{magento_store_url}"> #{magento_store_name}</a>
+
+    p#pinkbox Gift Card Information:
 
     = partial "partials/giftcard-email"
+
     tr
       td
         p If you have any questions, please feel free to <a href="mailto:#{magento_support_email}">contact us</a>
-

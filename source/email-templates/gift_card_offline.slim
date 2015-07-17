@@ -1,0 +1,15 @@
+tr
+  td
+    h1 Hello!
+    p Your #{magento_store_name} Gift Card is available to print.  To print the Gift Card go to this page: <a href="#{magento_gift_card_link}"> #{magento_gift_card_link}.</a>
+
+    = partial "partials/giftcard-email"
+    tr
+      td
+        h2 To redeem and use your card:
+        p Create an account and login into <a href="#{magento_store_url}"> #{magento_store_url} </a>
+        p Redeem the card in My Gift Cards of My Account section.
+        p Alternatively, you can redeem the card on My Cart page before proceeding to checkout.
+
+        p If you have any questions, please feel free to <a href="mailto:#{magento_support_email}">contact us</a>
+
