@@ -22,10 +22,6 @@ Written with [Ruby](https://www.ruby-lang.org/en/)+[Middleman](http://middlemana
 
 * Clone project and cd into project directory
 
-```bash
-git clone git@gitlab.immense.net:sweets-and-treats/magento-transactional-emails.git && cd magento-transactional-emails
-```
-
 * Install Ruby version set in `.ruby-version`
 
 ```
